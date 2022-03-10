@@ -1,6 +1,9 @@
      select
         id as customer_id,
         orderid as order_id,
+        paymentmethod as payment_method,
+        status,
+        created as created_at,
         amount/100 as amount
 
-    from raw.stripe.payment
+    from {{source('stripe','payment')}} 
