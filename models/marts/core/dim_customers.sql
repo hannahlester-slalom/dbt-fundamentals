@@ -7,7 +7,6 @@ orders as (
     select * from {{ref('fct_orders')}}
 ),
 
-
 customer_orders as (
 
     select

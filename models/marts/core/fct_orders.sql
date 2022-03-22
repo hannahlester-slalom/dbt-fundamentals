@@ -6,6 +6,7 @@ orders as (
     select * from {{ref('stg_orders')}}
 ),
 
+--Gets total payment amounts based on each unique order id. 
 order_payments as 
 (
     select order_id,
@@ -14,6 +15,7 @@ order_payments as
     group by order_id
 ),
 
+--Combines unique order information with how much was paid. 
 combined as 
 (
     select
